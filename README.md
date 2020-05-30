@@ -127,7 +127,7 @@ public static void Main(string[] args)
 }
 ```
 
-**Methods** is a class function/behavior
+**Method** is a class function/behavior
 
 - Method Signature
     - Method Name
@@ -162,7 +162,28 @@ var result = calculator.Add(1, 3, 4 ,5);
 - `Out` modifier
     - A wat to return more than one return type by passing a pre-initialised parameter to the function and pass the value to the same parameter.
     
-    
+**Field** is a variable declared in the class level to store data about the class.
+- `readonly` field insures that the fields is initialized only once.
+    - In constructors
+    - In declaration
+```c#
+class Person
+{
+    public readonly string Name = "Musta";
+    // OR
+    public Person()
+    {
+        this.Name = "Mustafa";
+    } 
+    // --------------- 
+    public void ChangeName()
+    {
+        // error
+        this.Name = "Other Name";
+    }
+
+}
+```
     
     
     
