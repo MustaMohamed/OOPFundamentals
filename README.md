@@ -18,7 +18,7 @@ and the other from Pluralsight [Object-Oriented Programming Fundamentals in C#](
 
 The first item to discuss here is Classes
 
-### 1.Class
+### 1. Class
 Classes is a building block in software applications in OO language like C#.
 
 **Anatomy of Class**
@@ -31,7 +31,7 @@ All are called data member or class member.
 
 ```c#
 // class example
-public class Persone 
+public class Person
 {
     // field member
     public string Name;
@@ -45,7 +45,6 @@ public class Persone
     // static member
     // static members can be accessed from class itself not from object instance
     public static int PesonsCount = 0;
-
 }
 
 public static void Main(string[] args)
@@ -58,4 +57,53 @@ public static void Main(string[] args)
     person.Introduce();
 }
 ```
+
+**Constructor** is a method that is called when an instance of class is created 
+**to** put an object in an early state and initialize some class fields.
+
+```c#
+public class Person
+{
+    // field member
+    public string Name;
+    // field member
+    public int Id;
+
+    // default/parameter-less constructor
+    public Person()
+    {
+    }
+    // constructor overlaoding
+    // constructor initilize Name field
+    public Person(string name)
+    {
+        this.Name = name;
+    }
+    // constructor overlaoding
+    // constructor initilize Name field and Id field
+    public Person(int id, string name)
+        : this(name) // call constructor that initialize name field
+    {
+        this.Id = id;
+    }
+}
+
+public static void Main(string[] args)
+{
+    Person person = new Person("Musta");
+    // OR
+    var person = new Person(1, "Mustafa");
+    // Access members
+    person.Name = "Musta";
+}
+```
+**NOTES**
+ - Constructor must be the same name of the class.
+ - Constructor doesn't have any return type.
+ - If you didn't create default/parameter-less constructor the C# compiler creates one for you.
+
+
+
+
+
 
