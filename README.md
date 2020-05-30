@@ -127,5 +127,42 @@ public static void Main(string[] args)
 }
 ```
 
+**Methods** is a class function/behavior
 
-
+- Method Signature
+    - Method Name
+    - Number and Type of parameter
+- Method Overloading
+    - A Method with the same name and but different signatures
+```c#
+class Point
+{
+    public void Move(int x, int y) {}
+    public void Move(Point newLocation) {}
+    public void Move(Point newLocation, int speed) {}
+}
+```
+- Parameters
+```c#
+class Calculator
+{
+    // bad way for overloading
+    public int Add(int n1, int n2) {}
+    public int Add(int n1, int n2, int n3) {}
+    public int Add(int n1, int n2, int n3, int n4) {}
+    
+    // good way
+    public int Add(params int[] number) {}
+}
+// ...
+var result = calculator.Add(1, 3, 4 ,5);
+```
+- `Ref` modifier
+    - A way to pass parameters by reference to a method.
+- `Out` modifier
+    - A wat to return more than one return type by passing a pre-initialised parameter to the function and pass the value to the same parameter.
+    
+    
+    
+    
+    
