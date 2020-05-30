@@ -10,7 +10,7 @@ and the other from Pluralsight [Object-Oriented Programming Fundamentals in C#](
 
 ### Principles of OOP:
 
-- **Encapsulation:** It's about hiding data and  implementation details.
+- **Encapsulation:** It's about hiding data/information hiding and collect information and behaviors in one place.
 - **Abstraction:** It's about hiding unnecessary implementation details.
 - **Inheritance:** It's about relationships and subclasses between objects, allowing developers to reuse a common logic while still maintaining a unique hierarchy.
 - **Polymorphism:** Objects can take on more than one form depending on the context. The program will determine which meaning or usage is necessary for each execution of that object, cutting down the need to duplicate code.
@@ -181,9 +181,45 @@ class Person
         // error
         this.Name = "Other Name";
     }
-
 }
 ```
-    
-    
-    
+
+**Access Modifiers** is a keywords that control the accessibility level of that class or field 
+**to** create safety in our program
+- **Property** is class member that encapsulate gitter and setter for accessing field.
+- `public` access anywhere
+- `private` access only inside the class
+    - getter and setter
+    ```c#
+    class Person
+    {
+        private string _name;
+        // property
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }  
+        }
+        // the same
+        public string Name { get; set; }
+        // also you can use private for setter or getter to access it in the class only
+        public string Name { get; private set; }
+    }
+    ```
+- `protected`
+- `internal`
+- `protected internal`
+
+**Indexer** is away to access class member by `[]` list operator
+```c#
+class HttpCookie
+{
+    // you can use any return type and any type for the key
+    public string this[string key]
+    {
+        get {...}
+        set {...}
+    }
+}
+```
+
