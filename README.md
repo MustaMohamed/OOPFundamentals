@@ -93,8 +93,6 @@ public static void Main(string[] args)
     Person person = new Person("Musta");
     // OR
     var person = new Person(1, "Mustafa");
-    // Access members
-    person.Name = "Musta";
 }
 ```
 **NOTES**
@@ -102,8 +100,32 @@ public static void Main(string[] args)
  - Constructor doesn't have any return type.
  - If you didn't create default/parameter-less constructor the C# compiler creates one for you.
 
+**Object Initializer** is another way to initialize an object, syntax for quickly initialize object without call its constructors
+**to** avoid creating multiple constructors. 
 
+```c#
+public class Person
+{
+    // field member
+    public string Name;
+    // field member
+    public int Id;
+}
 
+public static void Main(string[] args)
+{
+    Person person = new Person 
+    {
+        Name = "Musta"
+    };
+    // OR
+    var person = new Person
+    {
+        Id = 1,
+        Name = "Mustafa"
+    };
+}
+```
 
 
 
