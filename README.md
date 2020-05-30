@@ -17,3 +17,45 @@ and the other from Pluralsight [Object-Oriented Programming Fundamentals in C#](
 
 
 The first item to discuss here is Classes
+
+### 1.Class
+Classes is a building block in software applications in OO language like C#.
+
+**Anatomy of Class**
+
+All are called data member or class member.
+- Data (represented by field)
+- Behavior (represented by methods)
+
+**Object** is the class instance.
+
+```c#
+// class example
+public class Persone 
+{
+    // field member
+    public string Name;
+    
+    // method member
+    public void Introduce()
+    {
+        Console.WriteLine("Hello, My name is " + Name);
+    }
+    
+    // static member
+    // static members can be accessed from class itself not from object instance
+    public static int PesonsCount = 0;
+
+}
+
+public static void Main(string[] args)
+{
+    Person person = new Person();
+    // OR
+    var person = new Person();
+    // Access members
+    person.Name = "Musta";
+    person.Introduce();
+}
+```
+
