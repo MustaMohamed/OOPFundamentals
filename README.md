@@ -223,3 +223,74 @@ class HttpCookie
 }
 ```
 
+### 2. Inheritance
+
+**Relationship between classes**
+- **Inheritance** is a relationship between two classes that allows one class to inherit code form other, shortly is **_Is-A_** relationship.
+    - Benefits
+        1. Code reuse
+        2. Polymorphic behavior
+    ```c#
+    public class PresentationObject
+    {
+        // common shared code
+        public int Height { get; set; }
+        public int Width { get; set; }
+    
+        public void Copy()
+        {
+            Console.WriteLine("Object copied");
+        }
+        public void Duplicate()
+        {
+            Console.WriteLine("Object duplicated");
+        }
+    }
+    
+    public class Text : PresentationObject
+    {
+        // code specific for text
+        public int FontSize { get; set; }
+        public string FontName { get; set; }
+        
+        public void AddHyperlink(string url)
+        {
+            Console.WriteLine("We added link " + url);
+        }
+    }
+    ```
+- **Composition** is a relationship between two classes that allows one class to contain the other, shortly is **_Has-A_** relationship.
+    - Benefits
+        1. Code reuse
+        2. Flexibility
+        3. Loos-Coupling
+    ```c#
+    public class Logger
+    {
+        public void Log(string message)
+        {
+            Console.WriteLine(message);
+        }
+    }
+    
+    public class Installer
+    {
+        private Logger _logger;
+    
+        public Installer(Logger logger)
+        {
+            _logger = logger;
+        }
+        public void Install()
+        {
+            _logger.Log("installing...");
+        }
+    }
+    public static void Main(string[] args)
+    {
+        var logger = new Logger();
+        var installer = new Installer(logger);
+        installer.Install();
+    }
+    ```
+
