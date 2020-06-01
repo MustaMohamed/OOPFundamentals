@@ -356,4 +356,15 @@ Shape shape = circle; // base class reference
 Circle anotherCircle = (Circle)shape; // cassting required
 Car car = (Car)shape; // throws InvalidCastExceptoin
 ```
-
+- `is` and `as` keywords
+```c#
+Car car = (Car)obj; // may throw InvalidCastExceptoin
+// safe way
+Car car = obj as Car; // if obj is a car it will cast the obj, else car will be null
+if(car != null) {}
+// another safe way
+if(obj is Car) // check if obj is a car
+{
+    Car car = (Car)obj;
+}
+```
