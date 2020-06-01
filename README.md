@@ -350,15 +350,6 @@ public class Car : Vehicle
 - **Up-casting** is converting derived class to base class
 - **Down-casting** is converting base class to derived class
 ```c#
-class Shape
-{    
-}
-class Circle : Shape
-{
-}
-class Car
-{
-}
 // up casting
 Circle circle = new Circle();
 Shape shape = circle; // base class reference
