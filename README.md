@@ -326,3 +326,26 @@ class HttpCookie
     }
     ```
 
+**Constructors in Inheritance**
+```c#
+public class Vehicle
+{
+    private string _registrationNumber;
+    public Vehicle(string registrationNumber)
+    {
+        _registrationNumber = registrationNumber;
+    }
+}
+public class Car : Vehicle
+{
+    public Car(string registrationNumber)
+        : base(registrationNumber) // call parent class constructor
+    {
+        // initialize field in Car class
+    }
+}
+```
+
+
+
+
