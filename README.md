@@ -187,8 +187,8 @@ class Person
 **Access Modifiers** is a keywords that control the accessibility level of that class or field 
 **to** create safety in our program
 - **Property** is class member that encapsulate gitter and setter for accessing field.
-- `public` access anywhere
-- `private` access only inside the class
+- `public` access from anywhere
+- `private` access only from inside the class
     - getter and setter
     ```c#
     class Person
@@ -206,9 +206,37 @@ class Person
         public string Name { get; private set; }
     }
     ```
-- `protected`
-- `internal`
-- `protected internal`
+- `protected` access only from the class and its derived classes
+    ```c#
+  class Person
+  {
+      protected int CalculateRating()
+      {
+      }
+  }
+  var person = new Person();
+  // not accessable
+  persone.CalculateRating();
+    ```
+- `internal` access only from the same assembly _for classes only_
+    ```c#
+  internal class RateCalculator
+  {
+  }
+  // in same assembly valid
+  var calculator = new RateCalculator();
+  // in other assembly error
+  var calculator = new RateCalculator();
+    ```
+- `protected internal` access from the same assembly or any derived class
+    ```c#
+      class Person
+      {
+          protected internal int CalculateRating()
+          {
+          }
+      }
+        ```
 
 **Indexer** is away to access class member by `[]` list operator
 ```c#
@@ -230,6 +258,10 @@ class HttpCookie
     - Benefits
         1. Code reuse
         2. Polymorphic behavior
+    - Problems
+        1. Tight Coupling
+        2. Large Hierarchy
+        3. Fragility
     ```c#
     public class PresentationObject
     {
