@@ -236,7 +236,7 @@ class Person
           {
           }
       }
-        ```
+    ```
 
 **Indexer** is away to access class member by `[]` list operator
 ```c#
