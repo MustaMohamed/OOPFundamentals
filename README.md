@@ -208,15 +208,15 @@ class Person
     ```
 - `protected` access only from the class and its derived classes
     ```c#
-  class Person
-  {
-      protected int CalculateRating()
-      {
-      }
-  }
-  var person = new Person();
-  // not accessable
-  persone.CalculateRating();
+    class Person
+    {
+        protected int CalculateRating()
+        {
+        }
+    }
+    var person = new Person();
+    // not accessable
+    persone.CalculateRating();
     ```
 - `internal` access only from the same assembly _for classes only_
     ```c#
@@ -230,12 +230,12 @@ class Person
     ```
 - `protected internal` access from the same assembly or any derived class
     ```c#
-      class Person
-      {
-          protected internal int CalculateRating()
-          {
-          }
-      }
+    class Person
+    {
+        protected internal int CalculateRating()
+        {
+        }
+    }
     ```
 
 **Indexer** is away to access class member by `[]` list operator
