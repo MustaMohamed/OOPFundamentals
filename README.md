@@ -296,35 +296,35 @@ class HttpCookie
         1. Code reuse
         2. Flexibility
         3. Loos-Coupling
-    ```c#
-    public class Logger
+```c#
+public class Logger
+{
+    public void Log(string message)
     {
-        public void Log(string message)
-        {
-            Console.WriteLine(message);
-        }
+        Console.WriteLine(message);
     }
-    
-    public class Installer
+}
+
+public class Installer
+{
+    private Logger _logger;
+
+    public Installer(Logger logger)
     {
-        private Logger _logger;
-    
-        public Installer(Logger logger)
-        {
-            _logger = logger;
-        }
-        public void Install()
-        {
-            _logger.Log("installing...");
-        }
+        _logger = logger;
     }
-    public static void Main(string[] args)
+    public void Install()
     {
-        var logger = new Logger();
-        var installer = new Installer(logger);
-        installer.Install();
+        _logger.Log("installing...");
     }
-    ```
+}
+public static void Main(string[] args)
+{
+    var logger = new Logger();
+    var installer = new Installer(logger);
+    installer.Install();
+}
+```
 
 **Constructors in Inheritance**
 ```c#
@@ -346,6 +346,23 @@ public class Car : Vehicle
 }
 ```
 
-
-
+**Up-casting vs Down-casting**
+- **Up-casting** is converting derived class to base class
+- **Down-casting** is converting base class to derived class
+```c#
+class Shape
+{    
+}
+class Circle : Shape
+{
+}
+class Car
+{
+}
+// up casting
+Circle circle = new Circle();
+Shape shape = circle; // base class reference
+Circle anotherCircle = (Circle)shape; // cassting required
+Car car = (Car)shape; // throws InvalidCastExceptoin
+```
 
