@@ -386,5 +386,51 @@ object obj = 1;
 int i = (int)obj;
 ```
 
+### 3. Polymorphism
+- Objects can take on more than one form depending on the context. The program will determine which meaning or usage is necessary for each execution of that object, cutting down the need to duplicate code.
+
+    **Method Overriding**: means changing the implementation of an inherited method using `virtual` keyword
+    ```c#
+    public class Shape 
+    {  
+        public virtual Draw() 
+        {  
+          // Default implementation for all derived classes 
+        } 
+    }  
+    public class Circle : Shape 
+    {  
+        public override Draw() 
+        {  
+          // Changed implementation 
+        }
+    } 
+    ```
+  
+    **Abstract Classes and Members**
+    - Abstract modifier states that a class or a member misses implementation. We use
+    abstract members when it doesn’t make sense to implement them in a base class. For
+    example, the concept of drawing a shape is too abstract. We don’t know how to draw
+    a shape. This needs to be implemented in the derived classes.
+    - When a class member is declared as abstract, that class needs to be declared as
+    abstract as well. That means that class is not complete.
+    - In derived classes, we need to override the abstract members in the base class. 
+    ```c#
+    public abstruct class Shape 
+    {  
+        public abstruct Draw() 
+        {  
+          // Default implementation for all derived classes 
+        } 
+    }  
+    public class Circle : Shape 
+    {  
+        public override Draw() 
+        {  
+          // Changed implementation 
+        }
+    } 
+    ```
+
 
 
