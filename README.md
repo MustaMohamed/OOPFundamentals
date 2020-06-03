@@ -425,7 +425,7 @@ int i = (int)obj;
     }
     public class Circle : Shape
     {
-        public override Draw() 
+        public override Draw()
         {
           // Changed implementation
         }
