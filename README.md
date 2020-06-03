@@ -380,7 +380,7 @@ if(obj is Car) // check if obj is a car
 - **Unboxing** is the opposite: when an object reference is converted to a value type.
 ```c#
 // Boxing
-object obj = 1;  
+object obj = 1;
  
 // Unboxing
 int i = (int)obj;
