@@ -368,3 +368,23 @@ if(obj is Car) // check if obj is a car
     Car car = (Car)obj;
 }
 ```
+
+**Boxing vs Unboxing**
+- C# types are divided into two categories: value types and reference types.
+- Value types (eg int, char, bool, all primitive types and struct) are stored in the stack.
+  They have a short life time and as soon as they go out of scope are removed from memory.
+- Reference types (eg. all classes) are stored in the heap.
+- Every object can be implicitly cast to a base class reference.
+- The object class is the parent of all classes in .NET Framework.
+- **Boxing** happens when a value type instance is converted to an object reference.
+- **Unboxing** is the opposite: when an object reference is converted to a value type.
+```c#
+// Boxing 
+object obj = 1;  
+ 
+// Unboxing 
+int i = (int)obj;
+```
+
+
+
