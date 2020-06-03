@@ -416,20 +416,20 @@ int i = (int)obj;
     abstract as well. That means that class is not complete.
     - In derived classes, we need to override the abstract members in the base class. 
     ```c#
-    public abstruct class Shape 
-    {  
-        public abstruct Draw() 
-        {  
-          // Default implementation for all derived classes 
-        } 
-    }  
-    public class Circle : Shape 
-    {  
-        public override Draw() 
-        {  
-          // Changed implementation 
+    public abstruct class Shape
+    {
+        public abstruct Draw()
+        {
+          // Default implementation for all derived classes
         }
-    } 
+    }
+    public class Circle : Shape
+    {
+        public override Draw() 
+        {
+          // Changed implementation
+        }
+    }
     ```
 
 
