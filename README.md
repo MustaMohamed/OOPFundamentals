@@ -379,10 +379,10 @@ if(obj is Car) // check if obj is a car
 - **Boxing** happens when a value type instance is converted to an object reference.
 - **Unboxing** is the opposite: when an object reference is converted to a value type.
 ```c#
-// Boxing 
+// Boxing
 object obj = 1;  
  
-// Unboxing 
+// Unboxing
 int i = (int)obj;
 ```
 
