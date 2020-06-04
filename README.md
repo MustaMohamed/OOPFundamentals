@@ -391,20 +391,20 @@ int i = (int)obj;
 
     **Method Overriding**: means changing the implementation of an inherited method using `virtual` keyword
     ```c#
-    public class Shape 
-    {  
-        public virtual Draw() 
-        {  
-          // Default implementation for all derived classes 
+    public class Shape
+    {
+        public virtual Draw()
+        {
+          // Default implementation for all derived classes
         } 
-    }  
-    public class Circle : Shape 
-    {  
-        public override Draw() 
-        {  
-          // Changed implementation 
-        }
     } 
+    public class Circle : Shape
+    {
+        public override Draw()
+        {
+          // Changed implementation
+        }
+    }
     ```
   
     **Abstract Classes and Members**
