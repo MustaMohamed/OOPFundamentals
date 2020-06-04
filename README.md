@@ -396,8 +396,8 @@ int i = (int)obj;
         public virtual Draw()
         {
           // Default implementation for all derived classes
-        } 
-    } 
+        }
+    }
     public class Circle : Shape
     {
         public override Draw()
